@@ -1028,6 +1028,7 @@ body {
     color: var(--dark-charcoal);
     transition: all 0.3s ease;
     border: 1px solid rgba(212, 175, 55, 0.2);
+    text-decoration: none;
 }
 
 .social-icons a:hover {
@@ -1036,6 +1037,7 @@ body {
     transform: translateY(-4px);
     border-color: var(--primary-gold);
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    text-decoration: none;
 }
 
 /* Ensure Font Awesome brand icons in footer match SVG sizing */
