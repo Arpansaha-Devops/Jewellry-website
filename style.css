@@ -390,12 +390,14 @@ body {
     justify-content: center;
     position: relative;
     border: 1px solid rgba(212, 175, 55, 0.15);
+    aspect-ratio: 1 / 1;
 }
 
 .category-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 
@@ -634,12 +636,14 @@ body {
     justify-content: center;
     position: relative;
     border: 1px solid rgba(212, 175, 55, 0.15);
+    aspect-ratio: 1 / 1;
 }
 
 .product-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 
@@ -743,12 +747,16 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(212, 175, 55, 0.1);
     animation: float 6s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .collection-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
 }
@@ -1291,10 +1299,16 @@ body {
 @media (max-width: 1024px) {
     .collection-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .collection-image {
-        height: 400px;
+        height: 350px;
+        display: flex;
+    }
+
+    .collection-title {
+        font-size: 2.2rem;
     }
     
     .footer-grid {
@@ -1338,8 +1352,36 @@ body {
         font-size: 1.5rem;
     }
     
+    .collection-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .collection-image {
+        height: 280px;
+        display: flex;
+    }
+
+    .collection-content {
+        padding: 1rem;
+    }
+
     .collection-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .collection-text {
+        font-size: 0.9rem;
+    }
+
+    .product-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .category-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
     }
     
     .footer-grid {
@@ -1436,14 +1478,24 @@ body {
 
     .collection-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .collection-image {
-        display: none;
+        height: 280px;
+        display: flex;
     }
 
     .collection-content {
         padding: 1rem;
+    }
+
+    .collection-title {
+        font-size: 1.8rem;
+    }
+
+    .collection-text {
+        font-size: 0.9rem;
     }
 
     .footer-grid {
@@ -1456,6 +1508,16 @@ body {
 
     .login-btn span {
         display: none; /* Only show icon on very small screens? Maybe just keep it. */
+    }
+
+    .product-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .category-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
     }
 }
 
@@ -1475,6 +1537,33 @@ body {
     
     .nav-icons .icon-btn {
         padding: 0.3rem;
+    }
+
+    .collection-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .collection-image {
+        height: 250px;
+    }
+
+    .collection-title {
+        font-size: 1.5rem;
+    }
+
+    .collection-text {
+        font-size: 0.85rem;
+    }
+
+    .product-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .category-image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
     }
 }
 
