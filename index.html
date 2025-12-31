@@ -1,723 +1,1312 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DIAMON - Premium Jewelry Collection</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 4H18L22 9L12 22L2 9L6 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M11 4L7 9L12 22L17 9L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M2 9h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span class="logo-text">DIAMON</span>
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">HOME</a></li>
-                <li><a href="#shops" class="nav-link">SHOPS</a></li>
-                <li><a href="#products" class="nav-link">PRODUCTS</a></li>
-                <li><a href="#blog" class="nav-link">BLOG</a></li>
-                <li><a href="#pages" class="nav-link">PAGES</a></li>
-            </ul>
-
-            <div class="nav-icons">
-                <button class="icon-btn search-btn" aria-label="Search">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                </button>
-                <button class="login-btn" aria-label="Login">
-                    <i class="fa-solid fa-user"></i>
-                    Login
-                </button>
-                <button class="icon-btn cart-btn" aria-label="Shopping Cart">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    <span class="cart-count">0</span>
-                </button>
-                <button class="hamburger" aria-label="Toggle Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
+      <div class="nav-container">
+        <div class="logo">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 4H18L22 9L12 22L2 9L6 4Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M11 4L7 9L12 22L17 9L13 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 9h20"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="logo-text">DIAMON</span>
         </div>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">HOME</a></li>
+          <li><a href="#shops" class="nav-link">SHOPS</a></li>
+          <li><a href="#products" class="nav-link">PRODUCTS</a></li>
+          <li><a href="#blog" class="nav-link">BLOG</a></li>
+          <li><a href="#pages" class="nav-link">PAGES</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <button class="icon-btn search-btn" aria-label="Search">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <button class="login-btn" aria-label="Login">
+            <i class="fa-solid fa-user"></i>
+            Login
+          </button>
+          <button class="icon-btn cart-btn" aria-label="Shopping Cart">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 7V6a6 6 0 0 1 12 0v1" />
+              <path
+                d="M3 7h18l-1.5 13.5A2 2 0 0 1 17.5 22H6.5a2 2 0 0 1-1.99-1.5L3 7z"
+              />
+              <path d="M9 11a3 3 0 0 1 6 0" />
+            </svg>
+            <span class="cart-count">0</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-slider">
-            <div class="hero-slide active">
-                <img src="images/heroimage4.png.png" alt="Luxury Jewelry Collection" class="hero-image">
-                <div class="hero-content">
-                    <h1 class="hero-title">Timeless Elegance</h1>
-                    <p class="hero-subtitle">Discover Our Exquisite Collection</p>
-                    <button class="hero-cta">Shop Now</button>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="images/heroimage3.png.png" alt="Premium Diamond Jewelry" class="hero-image">
-                <div class="hero-content">
-                    <h1 class="hero-title">Luxury Redefined</h1>
-                    <p class="hero-subtitle">Handcrafted Perfection</p>
-                    <button class="hero-cta">Explore</button>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <img src="images/hero5.png.png" alt="Designer Jewelry" class="hero-image">
-                <div class="hero-content">
-                    <h1 class="hero-title">Shine Bright</h1>
-                    <p class="hero-subtitle">Exclusive Designer Pieces</p>
-                    <button class="hero-cta">View Collection</button>
-                </div>
-            </div>
-            <div class="hero-slide">
-                <video src="video1.mp4" class="hero-video" loop muted playsinline></video>
-                <div class="hero-content">
-                    <h1 class="hero-title">Precious Moments</h1>
-                    <p class="hero-subtitle">Celebrate Life's Special Occasions</p>
-                    <button class="hero-cta">Discover More</button>
-                </div>
-            </div>
+      <div class="hero-slider">
+        <div class="hero-slide active">
+          <img
+            src="images/heroimage4.png.png"
+            alt="Luxury Jewelry Collection"
+            class="hero-image"
+          />
+          <div class="hero-content">
+            <h1 class="hero-title">Timeless Elegance</h1>
+            <p class="hero-subtitle">Discover Our Exquisite Collection</p>
+            <button class="hero-cta">Shop Now</button>
+          </div>
         </div>
-        <div class="hero-controls">
-            <button class="hero-btn prev-btn" aria-label="Previous">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <button class="hero-btn next-btn" aria-label="Next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+        <div class="hero-slide">
+          <img
+            src="images/heroimage3.png.png"
+            alt="Premium Diamond Jewelry"
+            class="hero-image"
+          />
+          <div class="hero-content">
+            <h1 class="hero-title">Luxury Redefined</h1>
+            <p class="hero-subtitle">Handcrafted Perfection</p>
+            <button class="hero-cta">Explore</button>
+          </div>
         </div>
-        <div class="hero-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+        <div class="hero-slide">
+          <img
+            src="images/hero5.png.png"
+            alt="Designer Jewelry"
+            class="hero-image"
+          />
+          <div class="hero-content">
+            <h1 class="hero-title">Shine Bright</h1>
+            <p class="hero-subtitle">Exclusive Designer Pieces</p>
+            <button class="hero-cta">View Collection</button>
+          </div>
         </div>
+        <div class="hero-slide">
+          <video
+            src="video1.mp4"
+            class="hero-video"
+            loop
+            muted
+            playsinline
+          ></video>
+          <div class="hero-content">
+            <h1 class="hero-title">Precious Moments</h1>
+            <p class="hero-subtitle">Celebrate Life's Special Occasions</p>
+            <button class="hero-cta">Discover More</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-controls">
+        <button class="hero-btn prev-btn" aria-label="Previous">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="hero-btn next-btn" aria-label="Next">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="hero-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+      </div>
     </section>
 
     <!-- Categories Section -->
     <section class="categories">
-        <div class="container">
-            <div class="categories-grid">
-                <div class="category-card lazy-element">
-                    <div class="category-image-wrapper">
-                        <img src="images/bracelet.png" alt="Bracelet Collection" class="category-image">
-                    </div>
-                    <h3 class="category-title">Bracelet</h3>
-                    <button class="category-btn">View Collection</button>
-                </div>
-
-                <div class="category-card lazy-element">
-                    <div class="category-image-wrapper">
-                        <img src="images/collection.png" alt="Jewelry Collection" class="category-image">
-                    </div>
-                    <h3 class="category-title">Collection</h3>
-                    <button class="category-btn">View Collection</button>
-                </div>
-
-                <div class="category-card lazy-element">
-                    <div class="category-image-wrapper">
-                        <img src="images/rings.png" alt="Rings Collection" class="category-image">
-                    </div>
-                    <h3 class="category-title">Rings</h3>
-                    <button class="category-btn">View Collection</button>
-                </div>
-
-                <div class="category-card lazy-element">
-                    <div class="category-image-wrapper">
-                        <img src="images/accessories.png" alt="Accessories Collection" class="category-image">
-                    </div>
-                    <h3 class="category-title">Accessories</h3>
-                    <button class="category-btn">View Collection</button>
-                </div>
+      <div class="container">
+        <div class="categories-grid">
+          <div class="category-card lazy-element">
+            <div class="category-image-wrapper">
+              <img
+                src="images/bracelet.png"
+                alt="Bracelet Collection"
+                class="category-image"
+              />
             </div>
+            <h3 class="category-title">Bracelet</h3>
+            <button class="category-btn">View Collection</button>
+          </div>
+
+          <div class="category-card lazy-element">
+            <div class="category-image-wrapper">
+              <img
+                src="images/collection.png"
+                alt="Jewelry Collection"
+                class="category-image"
+              />
+            </div>
+            <h3 class="category-title">Collection</h3>
+            <button class="category-btn">View Collection</button>
+          </div>
+
+          <div class="category-card lazy-element">
+            <div class="category-image-wrapper">
+              <img
+                src="images/rings.png"
+                alt="Rings Collection"
+                class="category-image"
+              />
+            </div>
+            <h3 class="category-title">Rings</h3>
+            <button class="category-btn">View Collection</button>
+          </div>
+
+          <div class="category-card lazy-element">
+            <div class="category-image-wrapper">
+              <img
+                src="images/accessories.png"
+                alt="Accessories Collection"
+                class="category-image"
+              />
+            </div>
+            <h3 class="category-title">Accessories</h3>
+            <button class="category-btn">View Collection</button>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Featured Products Section -->
     <section class="featured-products">
-        <div class="container">
-            <div class="section-header lazy-element">
-                <h2 class="section-title">FEATURED PRODUCTS</h2>
-            </div>
-            <div class="featured-grid">
-                <div class="product-card lazy-element" data-product-id="1">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product1.png.jpeg" alt="Sterling Silver" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Sterling Silver</h4>
-                    <p class="product-price">$69.00 <span class="old-price">$80.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="2">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product2.png.jpeg" alt="Ruby Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Ruby Necklace</h4>
-                    <p class="product-price">$75.00 <span class="old-price">$85.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="3">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product3.png.jpeg" alt="Rose Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Rose Necklace</h4>
-                    <p class="product-price">$85.00 <span class="old-price">$95.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="4">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product4.png.jpeg" alt="Necklace Diamond" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Necklace Diamond</h4>
-                    <p class="product-price">$120.00 <span class="old-price">$140.00</span></p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header lazy-element">
+          <h2 class="section-title">FEATURED PRODUCTS</h2>
         </div>
+        <div class="featured-grid">
+          <div class="product-card lazy-element" data-product-id="1">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product1.png.jpeg"
+                alt="Sterling Silver"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Sterling Silver</h4>
+            <p class="product-price">
+              $69.00 <span class="old-price">$80.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="2">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product2.png.jpeg"
+                alt="Ruby Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Ruby Necklace</h4>
+            <p class="product-price">
+              $75.00 <span class="old-price">$85.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="3">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product3.png.jpeg"
+                alt="Rose Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Rose Necklace</h4>
+            <p class="product-price">
+              $85.00 <span class="old-price">$95.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="4">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product4.png.jpeg"
+                alt="Necklace Diamond"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Necklace Diamond</h4>
+            <p class="product-price">
+              $120.00 <span class="old-price">$140.00</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Our Latest Jewelry Collection Section -->
-     
+
     <section class="latest-collection">
-        <div class="collection-container">
-            <div class="collection-image">
-                <img src="images/product5.png.jpeg" alt="Model wearing jewelry">
-            </div>
-            <div class="collection-content">
-                <h2 class="collection-title">Our Latest<br>Jewelry Collection</h2>
-                <p class="collection-text">Phasellus lectus nunc, aliquet nec tincidunt nec, egestas in velit. Etiam
-                    consectetur malesuada leo. Suspendisse mi risus, rutrum a aliquam bibendum, tempus vitae mi.</p>
-                <button class="shop-now-btn">SHOP NOW</button>
-            </div>
-            <div class="collection-image">
-                <img src="images/product6.png.jpeg" alt="Necklace jewelry">
-            </div>
+      <div class="collection-container">
+        <div class="collection-image">
+          <img src="images/product5.png.jpeg" alt="Model wearing jewelry" />
         </div>
+        <div class="collection-content">
+          <h2 class="collection-title">Our Latest<br />Jewelry Collection</h2>
+          <p class="collection-text">
+            Phasellus lectus nunc, aliquet nec tincidunt nec, egestas in velit.
+            Etiam consectetur malesuada leo. Suspendisse mi risus, rutrum a
+            aliquam bibendum, tempus vitae mi.
+          </p>
+          <button class="shop-now-btn">SHOP NOW</button>
+        </div>
+        <div class="collection-image">
+          <img src="images/product6.png.jpeg" alt="Necklace jewelry" />
+        </div>
+      </div>
     </section>
 
     <!-- Best Seller Section -->
     <section class="bestseller" id="products">
-        <div class="container">
-            <p class="section-subtitle lazy-element">Best Seller Product This Week!</p>
-            <div class="section-title-wrapper lazy-element">
-                <span class="title-line"></span>
-                <h2 class="section-title">BEST SELLER</h2>
-                <span class="title-line"></span>
-            </div>
-            <div class="products-grid">
-                <div class="product-card lazy-element" data-product-id="5">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product7.png.jpeg" alt="Sterling Silver" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Sterling Silver</h4>
-                    <p class="product-price">$95.00 <span class="old-price">$110.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="6">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product11.png.jpeg" alt="Ruby Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Ruby Necklace</h4>
-                    <p class="product-price">$60.00 <span class="old-price">$70.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="7">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product9.png.jpeg" alt="Rose Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Rose Necklace</h4>
-                    <p class="product-price">$150.00 <span class="old-price">$170.00</span></p>
-                </div>
-
-                <div class="product-card lazy-element" data-product-id="8">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product10.png.jpeg" alt="Necklace Diamond" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Necklace Diamond</h4>
-                    <p class="product-price">$110.00 <span class="old-price">$130.00</span></p>
-                </div>
-            </div>
+      <div class="container">
+        <p class="section-subtitle lazy-element">
+          Best Seller Product This Week!
+        </p>
+        <div class="section-title-wrapper lazy-element">
+          <span class="title-line"></span>
+          <h2 class="section-title">BEST SELLER</h2>
+          <span class="title-line"></span>
         </div>
+        <div class="products-grid">
+          <div class="product-card lazy-element" data-product-id="5">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product7.png.jpeg"
+                alt="Sterling Silver"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Sterling Silver</h4>
+            <p class="product-price">
+              $95.00 <span class="old-price">$110.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="6">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product11.png.jpeg"
+                alt="Ruby Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Ruby Necklace</h4>
+            <p class="product-price">
+              $60.00 <span class="old-price">$70.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="7">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product9.png.jpeg"
+                alt="Rose Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Rose Necklace</h4>
+            <p class="product-price">
+              $150.00 <span class="old-price">$170.00</span>
+            </p>
+          </div>
+
+          <div class="product-card lazy-element" data-product-id="8">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product10.png.jpeg"
+                alt="Necklace Diamond"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Necklace Diamond</h4>
+            <p class="product-price">
+              $110.00 <span class="old-price">$130.00</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Deals of the Day Section -->
     <section class="deals-section">
-        <div class="deals-overlay"></div>
-        <div class="container deals-container">
-            <h2 class="deals-title">DEALS OF THE DAY</h2>
-            <div class="deals-grid">
-                <div class="product-card deals-card lazy-element" data-product-id="9">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/product11.png.jpeg" alt="Rose Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Rose Necklace</h4>
-                    <p class="product-price">$55.00 <span class="old-price">$65.00</span></p>
-                </div>
-
-                <div class="product-card deals-card lazy-element" data-product-id="10">
-                    <div class="sale-badge">Sale</div>
-                    <button class="wishlist-btn" aria-label="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="product-image-wrapper">
-                        <img src="images/prodyct12.png.jpeg" alt="Ruby Necklace" class="product-image">
-                        <div class="product-actions">
-                            <button class="product-action-btn eye-btn" aria-label="Quick View">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                            </button>
-                            <button class="product-action-btn cart-btn" aria-label="Add to Cart">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <h4 class="product-name">Ruby Necklace</h4>
-                    <p class="product-price">$130.00 <span class="old-price">$150.00</span></p>
-                </div>
+      <div class="deals-overlay"></div>
+      <div class="container deals-container">
+        <h2 class="deals-title">DEALS OF THE DAY</h2>
+        <div class="deals-grid">
+          <div class="product-card deals-card lazy-element" data-product-id="9">
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/product11.png.jpeg"
+                alt="Rose Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
             </div>
+            <h4 class="product-name">Rose Necklace</h4>
+            <p class="product-price">
+              $55.00 <span class="old-price">$65.00</span>
+            </p>
+          </div>
+
+          <div
+            class="product-card deals-card lazy-element"
+            data-product-id="10"
+          >
+            <div class="sale-badge">Sale</div>
+            <button class="wishlist-btn" aria-label="Add to Wishlist">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </button>
+            <div class="product-image-wrapper">
+              <img
+                src="images/prodyct12.png.jpeg"
+                alt="Ruby Necklace"
+                class="product-image"
+              />
+              <div class="product-actions">
+                <button
+                  class="product-action-btn eye-btn"
+                  aria-label="Quick View"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+                <button
+                  class="product-action-btn cart-btn"
+                  aria-label="Add to Cart"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path
+                      d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <h4 class="product-name">Ruby Necklace</h4>
+            <p class="product-price">
+              $130.00 <span class="old-price">$150.00</span>
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Shop Instagram Section -->
 
     <section class="instagram-section">
-        <div class="container">
-         <h2 class="section-title">SHOP IN INSTAGRAM</h2>
-            <div class="instagram-grid">
-                <div class="instagram-item lazy-element">
-                    <img src="images/product13.png.jpeg" alt="Instagram jewelry 1">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product14.png.jpeg" alt="Instagram jewelry 2">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product5.png.jpeg" alt="Instagram jewelry 3">
-                    <div class="instagram-overlay">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <defs>
-                                <linearGradient id="insta-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#f09433;stop-opacity:1" />
-                                    <stop offset="25%" style="stop-color:#e6683c;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#dc2743;stop-opacity:1" />
-                                    <stop offset="75%" style="stop-color:#cc2366;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#bc1888;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#insta-grad)"></rect>
-                            <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"></circle>
-                            <circle cx="18" cy="6" r="1.5" fill="white"></circle>
-                        </svg>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product6.png.jpeg" alt="Instagram jewelry 4">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product7.png.jpeg" alt="Instagram jewelry 5">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product8.png.jpeg" alt="Instagram jewelry 6">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product9.png.jpeg" alt="Instagram jewelry 7">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product10.png.jpeg" alt="Instagram jewelry 8">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/product11.png.jpeg" alt="Instagram jewelry 9">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
-                <div class="instagram-item lazy-element">
-                    <img src="images/prodyct12.png.jpeg" alt="Instagram jewelry 10">
-                    <div class="instagram-overlay">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">SHOP IN INSTAGRAM</h2>
+        <div class="instagram-grid">
+          <div class="instagram-item lazy-element">
+            <img src="images/product13.png.jpeg" alt="Instagram jewelry 1" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
             </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product14.png.jpeg" alt="Instagram jewelry 2" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product5.png.jpeg" alt="Instagram jewelry 3" />
+            <div class="instagram-overlay">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs>
+                  <linearGradient
+                    id="insta-grad"
+                    x1="0%"
+                    y1="100%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #f09433; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="25%"
+                      style="stop-color: #e6683c; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="50%"
+                      style="stop-color: #dc2743; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="75%"
+                      style="stop-color: #cc2366; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #bc1888; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  ry="5"
+                  fill="url(#insta-grad)"
+                ></rect>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                ></circle>
+                <circle cx="18" cy="6" r="1.5" fill="white"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product6.png.jpeg" alt="Instagram jewelry 4" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product7.png.jpeg" alt="Instagram jewelry 5" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product8.png.jpeg" alt="Instagram jewelry 6" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product9.png.jpeg" alt="Instagram jewelry 7" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product10.png.jpeg" alt="Instagram jewelry 8" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/product11.png.jpeg" alt="Instagram jewelry 9" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+          <div class="instagram-item lazy-element">
+            <img src="images/prodyct12.png.jpeg" alt="Instagram jewelry 10" />
+            <div class="instagram-overlay">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 4H18L22 9L12 22L2 9L6 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M11 4L7 9L12 22L17 9L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M2 9h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>DIAMON</span>
-                    </div>
-                    <p class="footer-description">Get first dibs on new arrivals, sales, events and more!</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Twitter (X)"><i class="ri-twitter-x-line"></i></a>
-                        <a href="#" aria-label="Dribbble"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path
-                                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32">
-                                </path>
-                            </svg></a>
-                        <a href="#" aria-label="Behance"><svg width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M20.07 6.35H15v1.49h5.09zM19 16.05a2.23 2.23 0 0 1-1.3.37A2.23 2.23 0 0 1 16 15.88a2.49 2.49 0 0 1-.62-1.76h6.06v-.69a4.67 4.67 0 0 0-1.14-3.35 4 4 0 0 0-3-1.26 4.11 4.11 0 0 0-3 1.17 4.38 4.38 0 0 0-1.17 3.26 4.62 4.62 0 0 0 1.23 3.37 4.17 4.17 0 0 0 3.13 1.23 4 4 0 0 0 2.54-.79A3.26 3.26 0 0 0 21.17 15zM16.51 11.9a1.59 1.59 0 0 1 1.21-.47 1.87 1.87 0 0 1 1.33.45 1.73 1.73 0 0 1 .54 1.26h-3.54a2 2 0 0 1 .46-1.24zM4.1 14.3h4.43a2.56 2.56 0 0 1-2.55 1.77 3.1 3.1 0 0 1-2.32-.86A3.3 3.3 0 0 1 2.76 13a3.47 3.47 0 0 1 .85-2.43 3 3 0 0 1 2.31-.91 2.84 2.84 0 0 1 2.16.81 2.93 2.93 0 0 1 .8 2.07H4.81a1.5 1.5 0 0 0 .47 1 1.58 1.58 0 0 0 1.09.38 1.63 1.63 0 0 0 1.49-.85h2.37a3.61 3.61 0 0 1-1.38 1.88 4.12 4.12 0 0 1-2.39.64 4.31 4.31 0 0 1-3.07-1.09A3.82 3.82 0 0 1 2.2 12.1a4.29 4.29 0 0 1 1.18-3.12 4.23 4.23 0 0 1 3.11-1.15 4.39 4.39 0 0 1 2.88.94 3.79 3.79 0 0 1 1.43 2.65v.62H4.1z" />
-                            </svg></a>
-                        <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-heading">Help & Information</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Custom Service</a></li>
-                        <li><a href="#">F.A.Q's</a></li>
-                        <li><a href="#">Ordering Tracking</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-heading">About Us</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Discount</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Your Account</a></li>
-                        <li><a href="#">Advanced Search</a></li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 4H18L22 9L12 22L2 9L6 4Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11 4L7 9L12 22L17 9L13 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2 9h20"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>DIAMON</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 DIAMON. All rights reserved. Premium Jewelry Collection.</p>
-                <div class="payment-methods">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="payment-logo">
-                    <img src="https://raw.githubusercontent.com/arpan-saha-7/jewelry-images/main/rupay.png" alt="RuPay" class="payment-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rupay-Logo.png/1200px-Rupay-Logo.png'">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="payment-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Pay" class="payment-logo">
-                </div>
+            <p class="footer-description">
+              Get first dibs on new arrivals, sales, events and more!
+            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Twitter (X)"
+                ><i class="ri-twitter-x-line"></i
+              ></a>
+              <a href="#" aria-label="Dribbble"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path
+                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
+                  ></path></svg
+              ></a>
+              <a href="#" aria-label="Behance"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.07 6.35H15v1.49h5.09zM19 16.05a2.23 2.23 0 0 1-1.3.37A2.23 2.23 0 0 1 16 15.88a2.49 2.49 0 0 1-.62-1.76h6.06v-.69a4.67 4.67 0 0 0-1.14-3.35 4 4 0 0 0-3-1.26 4.11 4.11 0 0 0-3 1.17 4.38 4.38 0 0 0-1.17 3.26 4.62 4.62 0 0 0 1.23 3.37 4.17 4.17 0 0 0 3.13 1.23 4 4 0 0 0 2.54-.79A3.26 3.26 0 0 0 21.17 15zM16.51 11.9a1.59 1.59 0 0 1 1.21-.47 1.87 1.87 0 0 1 1.33.45 1.73 1.73 0 0 1 .54 1.26h-3.54a2 2 0 0 1 .46-1.24zM4.1 14.3h4.43a2.56 2.56 0 0 1-2.55 1.77 3.1 3.1 0 0 1-2.32-.86A3.3 3.3 0 0 1 2.76 13a3.47 3.47 0 0 1 .85-2.43 3 3 0 0 1 2.31-.91 2.84 2.84 0 0 1 2.16.81 2.93 2.93 0 0 1 .8 2.07H4.81a1.5 1.5 0 0 0 .47 1 1.58 1.58 0 0 0 1.09.38 1.63 1.63 0 0 0 1.49-.85h2.37a3.61 3.61 0 0 1-1.38 1.88 4.12 4.12 0 0 1-2.39.64 4.31 4.31 0 0 1-3.07-1.09A3.82 3.82 0 0 1 2.2 12.1a4.29 4.29 0 0 1 1.18-3.12 4.23 4.23 0 0 1 3.11-1.15 4.39 4.39 0 0 1 2.88.94 3.79 3.79 0 0 1 1.43 2.65v.62H4.1z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+              ></a>
             </div>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">Help & Information</h4>
+            <ul class="footer-links">
+              <li><a href="#">Custom Service</a></li>
+              <li><a href="#">F.A.Q's</a></li>
+              <li><a href="#">Ordering Tracking</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">About Us</h4>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Discount</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4 class="footer-heading">Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Advanced Search</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 DIAMON. All rights reserved. Premium Jewelry Collection.
+          </p>
+          <div class="payment-methods">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+              alt="Visa"
+              class="payment-logo"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+              alt="Mastercard"
+              class="payment-logo"
+            />
+            <img
+              src="https://raw.githubusercontent.com/arpan-saha-7/jewelry-images/main/rupay.png"
+              alt="RuPay"
+              class="payment-logo"
+              onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rupay-Logo.png/1200px-Rupay-Logo.png'"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+              alt="PayPal"
+              class="payment-logo"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+              alt="Amazon Pay"
+              class="payment-logo"
+            />
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <!-- Product Details Modal -->
+    <div class="product-modal">
+      <div class="product-modal-content">
+        <button class="modal-close-btn" aria-label="Close Modal">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-image-section">
+            <img src="" alt="Product" class="modal-product-image" />
+          </div>
+          <div class="modal-info-section">
+            <h2 class="modal-product-name"></h2>
+            <div class="modal-rating">
+              <div class="stars-container">
+                <div class="stars"></div>
+              </div>
+              <span class="rating-text"></span>
+            </div>
+            <div class="modal-prices">
+              <div class="modal-price">
+                <span class="modal-current-price"></span>
+                <span class="modal-old-price"></span>
+              </div>
+              <div class="discount-badge"></div>
+            </div>
+            <div class="modal-description">
+              <h4>Product Details</h4>
+              <p>Premium quality jewelry crafted with precision and elegance. Each piece is carefully designed to enhance your natural beauty and complement any occasion.</p>
+              <ul class="product-features">
+                <li>Premium materials</li>
+                <li>Handcrafted quality</li>
+                <li>Lifetime durability</li>
+                <li>Certified authentic</li>
+              </ul>
+            </div>
+            <button class="modal-add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay"></div>
 
     <!-- Cart Panel -->
 
     <div class="cart-panel">
-        <div class="cart-header">
-            <h3>Shopping Cart</h3>
-            <button class="close-cart-btn" aria-label="Close Cart">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-cart-btn" aria-label="Close Cart">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items">
+        <p class="empty-cart-message">Your cart is empty</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-price">$0</span>
         </div>
-        <div class="cart-items">
-            <p class="empty-cart-message">Your cart is empty</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span class="total-price">$0</span>
-            </div>
-            <button class="checkout-btn">Checkout</button>
-        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
     </div>
 
     <div class="cart-overlay"></div>
@@ -725,9 +1314,16 @@
     <!-- Scroll to Top Button -->
 
     <button class="scroll-top-btn" aria-label="Scroll to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
     </button>
 
     <!-- GSAP Library -->
@@ -735,6 +1331,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

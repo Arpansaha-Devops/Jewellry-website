@@ -181,12 +181,22 @@ document.querySelectorAll('.product-action-btn.cart-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const card = btn.closest('.product-card');
-        cart.push({
-            name: card.querySelector('.product-name').textContent,
-            price: card.querySelector('.product-price').textContent.split(' ')[0],
-            image: card.querySelector('.product-image').src,
-            id: Date.now()
-        });
+        const priceMatch = card.querySelector('.product-price').textContent.match(/\$(\d+\.\d{2})/);
+        const numericPrice = parseFloat(priceMatch[1]);
+        const existingItem = cart.find(item => item.name === card.querySelector('.product-name').textContent);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                name: card.querySelector('.product-name').textContent,
+                price: numericPrice,
+                displayPrice: '$' + numericPrice.toFixed(2),
+                image: card.querySelector('.product-image').src,
+                id: Date.now(),
+                quantity: 1
+            });
+        }
         updateCart();
         gsap.fromTo(btn, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
         gsap.to(cartCount, { scale: 1.5, duration: 0.2, yoyo: true, repeat: 1 });
@@ -194,7 +204,8 @@ document.querySelectorAll('.product-action-btn.cart-btn').forEach(btn => {
 });
 
 function updateCart() {
-    cartCount.textContent = cart.length;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
     
     if (!cart.length) {
         cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
@@ -206,25 +217,65 @@ function updateCart() {
     cartItems.innerHTML = '';
 
     cart.forEach(item => {
-        const price = parseFloat(item.price.replace('$', '').replace(',', ''));
-        total += price;
+        const itemPrice = typeof item.price === 'number' ? item.price : parseFloat(item.price.toString().replace(/[^0-9.]/g, ''));
+        const itemTotal = itemPrice * item.quantity;
+        total += itemTotal;
+        const displayPrice = item.displayPrice || '$' + itemPrice.toFixed(2);
+        
         const cartItemEl = document.createElement('div');
         cartItemEl.className = 'cart-item';
         cartItemEl.innerHTML = `
             <img src="${item.image}" alt="${item.name}" class="cart-item-image">
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">${item.price}</div>
-                <button class="remove-item-btn" data-id="${item.id}">Remove</button>
+            <div class="cart-item-details">
+                <div class="cart-item-header">
+                    <div class="cart-item-name">${item.name}</div>
+                    <button class="remove-item-btn" data-id="${item.id}">Remove</button>
+                </div>
+                <div class="cart-item-price">${displayPrice}</div>
+                <div class="cart-item-controls">
+                    <div class="quantity-controls">
+                        <button class="qty-btn minus-btn" data-id="${item.id}">−</button>
+                        <span class="quantity-display">${item.quantity}</span>
+                        <button class="qty-btn plus-btn" data-id="${item.id}">+</button>
+                    </div>
+                    <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
+                </div>
             </div>
         `;
         cartItems.appendChild(cartItemEl);
     });
 
     totalPrice.textContent = `$${total.toFixed(2)}`;
+    
+    // Add event listeners for quantity buttons
+    document.querySelectorAll('.plus-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = cart.find(i => i.id == btn.dataset.id);
+            if (item) {
+                item.quantity++;
+                updateCart();
+                gsap.fromTo(btn, { scale: 1 }, { scale: 0.85, duration: 0.1, yoyo: true, repeat: 1 });
+            }
+        });
+    });
+    
+    document.querySelectorAll('.minus-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = cart.find(i => i.id == btn.dataset.id);
+            if (item && item.quantity > 1) {
+                item.quantity--;
+                updateCart();
+                gsap.fromTo(btn, { scale: 1 }, { scale: 0.85, duration: 0.1, yoyo: true, repeat: 1 });
+            } else if (item) {
+                cart = cart.filter(i => i.id !== item.id);
+                updateCart();
+            }
+        });
+    });
+    
     document.querySelectorAll('.remove-item-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            cart = cart.filter(item => item.id !== parseInt(btn.dataset.id));
+            cart = cart.filter(item => item.id != btn.dataset.id);
             updateCart();
         });
     });
@@ -241,13 +292,122 @@ checkoutBtn?.addEventListener('click', () => {
     closeCart();
 });
 
+// Product Details Modal
+const productModal = document.querySelector('.product-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalCloseBtn = document.querySelector('.modal-close-btn');
+
+const productData = {
+    '1': { name: 'Sterling Silver', originalPrice: '$80.00', currentPrice: '$69.00', rating: 4.5, reviews: 128 },
+    '2': { name: 'Ruby Necklace', originalPrice: '$85.00', currentPrice: '$75.00', rating: 4.8, reviews: 95 },
+    '3': { name: 'Rose Necklace', originalPrice: '$95.00', currentPrice: '$85.00', rating: 4.6, reviews: 112 },
+    '4': { name: 'Necklace Diamond', originalPrice: '$140.00', currentPrice: '$120.00', rating: 5.0, reviews: 156 },
+    '5': { name: 'Sterling Silver', originalPrice: '$110.00', currentPrice: '$95.00', rating: 4.7, reviews: 98 },
+    '6': { name: 'Ruby Necklace', originalPrice: '$70.00', currentPrice: '$60.00', rating: 4.5, reviews: 87 },
+    '7': { name: 'Rose Necklace', originalPrice: '$170.00', currentPrice: '$150.00', rating: 4.9, reviews: 142 },
+    '8': { name: 'Necklace Diamond', originalPrice: '$160.00', currentPrice: '$140.00', rating: 4.8, reviews: 134 },
+    '9': { name: 'Ruby Necklace', originalPrice: '$150.00', currentPrice: '$130.00', rating: 4.7, reviews: 119 }
+};
+
+const openProductModal = (productCard) => {
+    const productId = productCard.dataset.productId;
+    const data = productData[productId];
+    const image = productCard.querySelector('.product-image').src;
+    
+    document.querySelector('.modal-product-image').src = image;
+    document.querySelector('.modal-product-name').textContent = data.name;
+    document.querySelector('.modal-current-price').textContent = data.currentPrice;
+    document.querySelector('.modal-old-price').textContent = data.originalPrice;
+    document.querySelector('.rating-text').textContent = `${data.rating} (${data.reviews} reviews)`;
+    
+    // Generate star rating
+    const starsContainer = document.querySelector('.stars');
+    const fullStars = Math.floor(data.rating);
+    const hasHalfStar = data.rating % 1 !== 0;
+    let starsHTML = '';
+    
+    for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+            starsHTML += '<span class="star full">★</span>';
+        } else if (i === fullStars && hasHalfStar) {
+            starsHTML += '<span class="star half">★</span>';
+        } else {
+            starsHTML += '<span class="star empty">★</span>';
+        }
+    }
+    starsContainer.innerHTML = starsHTML;
+    
+    // Calculate discount
+    const original = parseFloat(data.originalPrice.replace('$', ''));
+    const current = parseFloat(data.currentPrice.replace('$', ''));
+    const discount = Math.round(((original - current) / original) * 100);
+    document.querySelector('.discount-badge').textContent = `-${discount}%`;
+    
+    // Store current product ID for add to cart
+    document.querySelector('.modal-add-to-cart-btn').dataset.productId = productId;
+    
+    productModal.classList.add('active');
+    modalOverlay.classList.add('active');
+    
+    gsap.timeline()
+        .fromTo(productModal, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.7)' })
+        .fromTo(modalOverlay, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+};
+
+const closeProductModal = () => {
+    gsap.timeline()
+        .to(productModal, { opacity: 0, scale: 0.9, duration: 0.3, ease: 'back.in(1.7)' })
+        .to(modalOverlay, { opacity: 0, duration: 0.2 }, 0)
+        .then(() => {
+            productModal.classList.remove('active');
+            modalOverlay.classList.remove('active');
+        });
+};
+
+modalCloseBtn?.addEventListener('click', closeProductModal);
+modalOverlay?.addEventListener('click', closeProductModal);
+
+// Modal add to cart button
+document.querySelector('.modal-add-to-cart-btn')?.addEventListener('click', (e) => {
+    const productId = e.target.dataset.productId;
+    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+    
+    if (productCard) {
+        const data = productData[productId];
+        const currentPrice = data.currentPrice;
+        const numPriceFromModal = parseFloat(currentPrice.replace('$', ''));
+        const existingItem = cart.find(item => item.name === data.name);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                name: data.name,
+                price: numPriceFromModal,
+                displayPrice: currentPrice,
+                image: productCard.querySelector('.product-image').src,
+                id: Date.now(),
+                quantity: 1
+            });
+        }
+        updateCart();
+        closeProductModal();
+        
+        // Open cart panel to show the added item
+        cartPanel.classList.add('active');
+        cartOverlay.classList.add('active');
+        gsap.timeline()
+            .fromTo(cartPanel, { x: 400, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: 'power3.out' })
+            .fromTo(cartOverlay, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+    }
+});
+
 // Quick view
 document.querySelectorAll('.eye-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const productName = btn.closest('.product-card').querySelector('.product-name').textContent;
-        gsap.fromTo(btn, { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
-        alert(`Quick View: ${productName}`);
+        const productCard = btn.closest('.product-card');
+        openProductModal(productCard);
     });
 });
 
