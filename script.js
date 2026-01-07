@@ -281,15 +281,249 @@ function updateCart() {
     });
 }
 
+// Payment Modal Functionality
+const paymentModal = document.querySelector('.payment-modal');
+const paymentOverlay = document.querySelector('.payment-overlay');
+const successModal = document.querySelector('.success-modal');
+const paymentModalClose = document.querySelector('.payment-modal-close');
+const successCloseBtn = document.querySelector('.success-close-btn');
+const payNowBtn = document.getElementById('payNowBtn');
+const cardPaymentForm = document.getElementById('cardPaymentForm');
+const cardholderName = document.getElementById('cardholderName');
+const cardNumber = document.getElementById('cardNumber');
+const cardExpiry = document.getElementById('cardExpiry');
+const cardCVV = document.getElementById('cardCVV');
+
+let selectedPaymentMethod = null;
+
+// Payment methods data
+const paymentMethods = {
+    card: { name: 'Credit/Debit Card', icon: 'fas fa-credit-card' },
+    cod: { name: 'Cash on Delivery', icon: 'fas fa-truck' },
+    upi: { name: 'UPI/Mobile', icon: 'fas fa-mobile-alt' },
+    bank: { name: 'Bank Transfer', icon: 'fas fa-university' }
+};
+
+// Open payment modal
+const openPaymentModal = () => {
+    paymentModal.classList.add('active');
+    paymentOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    selectedPaymentMethod = null;
+    populateOrderSummary();
+    resetPaymentForm();
+};
+
+// Close payment modal
+const closePaymentModal = () => {
+    paymentModal.classList.remove('active');
+    paymentOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+};
+
+// Close success modal
+const closeSuccessModal = () => {
+    successModal.classList.remove('active');
+    paymentOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+};
+
+// Populate order summary in payment modal
+const populateOrderSummary = () => {
+    const orderItemsSummary = document.getElementById('orderItemsSummary');
+    const orderTotalPrice = document.getElementById('orderTotalPrice');
+    
+    orderItemsSummary.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const itemPrice = typeof item.price === 'number' ? item.price : parseFloat(item.price.toString().replace(/[^0-9.]/g, ''));
+        const itemTotal = itemPrice * item.quantity;
+        total += itemTotal;
+
+        const orderItem = document.createElement('div');
+        orderItem.className = 'order-item';
+        orderItem.innerHTML = `
+            <div class="order-item-content">
+                <img src="${item.image}" alt="${item.name}" class="order-item-image">
+                <div class="order-item-info">
+                    <span class="order-item-name">${item.name}</span>
+                    <span class="order-item-qty">Qty: ${item.quantity}</span>
+                </div>
+            </div>
+            <span class="order-item-price">$${itemTotal.toFixed(2)}</span>
+        `;
+        orderItemsSummary.appendChild(orderItem);
+    });
+
+    orderTotalPrice.textContent = `$${total.toFixed(2)}`;
+};
+
+// Reset payment form
+const resetPaymentForm = () => {
+    cardholderName.value = '';
+    cardNumber.value = '';
+    cardExpiry.value = '';
+    cardCVV.value = '';
+    document.getElementById('codFullName').value = '';
+    document.getElementById('codEmail').value = '';
+    document.getElementById('codPhone').value = '';
+    document.getElementById('codAddress').value = '';
+    document.getElementById('codCity').value = '';
+    document.getElementById('codPostalCode').value = '';
+    document.getElementById('codNotes').value = '';
+};
+
+// Payment method selection
+document.querySelectorAll('.payment-method-card').forEach(card => {
+    card.addEventListener('click', () => {
+        document.querySelectorAll('.payment-method-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedPaymentMethod = card.dataset.method;
+
+        // Show/hide card form
+        if (selectedPaymentMethod === 'card') {
+            cardPaymentForm.classList.remove('hidden');
+            document.getElementById('codDeliveryForm').classList.add('hidden');
+        } else if (selectedPaymentMethod === 'cod') {
+            cardPaymentForm.classList.add('hidden');
+            document.getElementById('codDeliveryForm').classList.remove('hidden');
+        } else {
+            cardPaymentForm.classList.add('hidden');
+            document.getElementById('codDeliveryForm').classList.add('hidden');
+        }
+    });
+});
+
+// Card number formatting
+cardNumber.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\s+/g, '');
+    let formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+    e.target.value = formattedValue.slice(0, 19);
+});
+
+// Card expiry formatting
+cardExpiry.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length >= 2) {
+        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+    }
+    e.target.value = value;
+});
+
+// Card CVV (only numbers)
+cardCVV.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '');
+});
+
+// Phone number validation
+document.getElementById('codPhone').addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '');
+});
+
+// Postal code validation
+document.getElementById('codPostalCode').addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9\s-]/g, '');
+});
+
+// Process payment
+const processPayment = () => {
+    if (!selectedPaymentMethod) {
+        alert('Please select a payment method');
+        return;
+    }
+
+    // Validate card payment
+    if (selectedPaymentMethod === 'card') {
+        if (!cardholderName.value.trim()) {
+            alert('Please enter cardholder name');
+            return;
+        }
+        if (!cardNumber.value || cardNumber.value.replace(/\s/g, '').length < 16) {
+            alert('Please enter a valid card number');
+            return;
+        }
+        if (!cardExpiry.value || cardExpiry.value.length < 5) {
+            alert('Please enter a valid expiry date');
+            return;
+        }
+        if (!cardCVV.value || cardCVV.value.length < 3) {
+            alert('Please enter a valid CVV');
+            return;
+        }
+    }
+
+    // Validate COD delivery details
+    if (selectedPaymentMethod === 'cod') {
+        const codFullName = document.getElementById('codFullName').value.trim();
+        const codEmail = document.getElementById('codEmail').value.trim();
+        const codPhone = document.getElementById('codPhone').value.trim();
+        const codAddress = document.getElementById('codAddress').value.trim();
+        const codCity = document.getElementById('codCity').value.trim();
+        const codPostalCode = document.getElementById('codPostalCode').value.trim();
+
+        if (!codFullName) {
+            alert('Please enter your full name');
+            return;
+        }
+        if (!codEmail || !codEmail.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        if (!codPhone || codPhone.length < 10) {
+            alert('Please enter a valid phone number');
+            return;
+        }
+        if (!codAddress) {
+            alert('Please enter your address');
+            return;
+        }
+        if (!codCity) {
+            alert('Please enter your city');
+            return;
+        }
+        if (!codPostalCode) {
+            alert('Please enter your postal code');
+            return;
+        }
+    }
+
+    // Simulate payment processing
+    payNowBtn.classList.add('loading');
+    payNowBtn.textContent = 'Processing...';
+
+    // Simulate API call with delay
+    setTimeout(() => {
+        showSuccessMessage();
+        payNowBtn.classList.remove('loading');
+        payNowBtn.textContent = 'Pay Now';
+        closePaymentModal();
+        cart = [];
+        updateCart();
+    }, 1500);
+};
+
+// Show success message
+const showSuccessMessage = () => {
+    const orderId = 'ORD-' + Date.now().toString().slice(-8);
+    document.getElementById('orderIdDisplay').textContent = `Order ID: ${orderId}`;
+    successModal.classList.add('active');
+};
+
+// Event listeners
 checkoutBtn?.addEventListener('click', () => {
     if (!cart.length) {
         alert('Your cart is empty!');
         return;
     }
-    alert('Thank you for your purchase! Total: ' + totalPrice.textContent);
-    cart = [];
-    updateCart();
-    closeCart();
+    openPaymentModal();
+});
+
+paymentModalClose?.addEventListener('click', closePaymentModal);
+paymentOverlay?.addEventListener('click', closePaymentModal);
+payNowBtn?.addEventListener('click', processPayment);
+successCloseBtn?.addEventListener('click', () => {
+    closeSuccessModal();
 });
 
 // Product Details Modal
@@ -306,13 +540,17 @@ const productData = {
     '6': { name: 'Ruby Necklace', originalPrice: '$70.00', currentPrice: '$60.00', rating: 4.5, reviews: 87 },
     '7': { name: 'Rose Necklace', originalPrice: '$170.00', currentPrice: '$150.00', rating: 4.9, reviews: 142 },
     '8': { name: 'Necklace Diamond', originalPrice: '$160.00', currentPrice: '$140.00', rating: 4.8, reviews: 134 },
-    '9': { name: 'Ruby Necklace', originalPrice: '$150.00', currentPrice: '$130.00', rating: 4.7, reviews: 119 }
+    '9': { name: 'Ruby Necklace', originalPrice: '$150.00', currentPrice: '$130.00', rating: 4.7, reviews: 119 },
+    '10': { name: 'Emerald Bracelet', originalPrice: '$95.00', currentPrice: '$78.00', rating: 4.6, reviews: 104 },
+    '11': { name: 'Sapphire Ring', originalPrice: '$125.00', currentPrice: '$105.00', rating: 4.7, reviews: 98 },
+    '12': { name: 'Pearl Earrings', originalPrice: '$72.00', currentPrice: '$55.00', rating: 4.4, reviews: 76 },
+    '13': { name: 'Gold Pendant', originalPrice: '$115.00', currentPrice: '$92.00', rating: 4.8, reviews: 112 }
 };
 
 const openProductModal = (productCard) => {
     const productId = productCard.dataset.productId;
     const data = productData[productId];
-    const image = productCard.querySelector('.product-image').src;
+    const image = productCard.querySelector('.product-image')?.src || productCard.querySelector('.product-placeholder')?.parentElement?.src || '';
     
     document.querySelector('.modal-product-image').src = image;
     document.querySelector('.modal-product-name').textContent = data.name;
@@ -537,5 +775,263 @@ navLinksItems.forEach(item => item.addEventListener('click', () => toggleMenu(fa
 document.addEventListener('click', (e) => {
     if (!hamburger?.contains(e.target) && !navLinks?.contains(e.target)) {
         toggleMenu(false);
+    }
+});
+// ==================== SEARCH FUNCTIONALITY ====================
+// All products data
+const allProducts = [
+    { id: 1, name: 'Sterling Silver', price: '$69.00', oldPrice: '$80.00', image: 'images/product1.png.jpeg' },
+    { id: 2, name: 'Ruby Necklace', price: '$75.00', oldPrice: '$85.00', image: 'images/product2.png.jpeg' },
+    { id: 3, name: 'Rose Necklace', price: '$85.00', oldPrice: '$95.00', image: 'images/product3.png.jpeg' },
+    { id: 4, name: 'Necklace Diamond', price: '$120.00', oldPrice: '$140.00', image: 'images/product4.png.jpeg' },
+    { id: 5, name: 'Sterling Silver', price: '$95.00', oldPrice: '$110.00', image: 'images/product7.png.jpeg' },
+    { id: 6, name: 'Ruby Necklace', price: '$60.00', oldPrice: '$70.00', image: 'images/product11.png.jpeg' },
+    { id: 7, name: 'Rose Necklace', price: '$150.00', oldPrice: '$170.00', image: 'images/product9.png.jpeg' },
+    { id: 8, name: 'Necklace Diamond', price: '$110.00', oldPrice: '$130.00', image: 'images/product10.png.jpeg' },
+    { id: 9, name: 'Ruby Necklace', price: '$130.00', oldPrice: '$150.00', image: 'images/product11.png.jpeg' },
+    { id: 10, name: 'Emerald Bracelet', price: '$78.00', oldPrice: '$95.00', image: 'images/product15.png.jpeg' },
+    { id: 11, name: 'Sapphire Ring', price: '$105.00', oldPrice: '$125.00', image: 'images/product16.png.jpeg' },
+    { id: 12, name: 'Pearl Earrings', price: '$55.00', oldPrice: '$72.00', image: 'images/product17.png.jpeg' },
+    { id: 13, name: 'Gold Pendant', price: '$92.00', oldPrice: '$115.00', image: 'images/product18.png.jpeg' }
+];
+
+// Search modal elements
+const searchModal = document.querySelector('.search-modal');
+const searchOverlay = document.querySelector('.search-overlay');
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.querySelector('.search-btn');
+const searchModalClose = document.querySelector('.search-modal-close');
+const searchSuggestions = document.getElementById('searchSuggestions');
+const suggestionsList = document.getElementById('suggestionsList');
+const searchResults = document.getElementById('searchResults');
+const resultsGrid = document.getElementById('resultsGrid');
+const noResults = document.getElementById('noResults');
+
+// Debounce function
+const debounce = (func, delay) => {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+};
+
+// Get search history from localStorage
+const getSearchHistory = () => {
+    const history = localStorage.getItem('searchHistory');
+    return history ? JSON.parse(history) : [];
+};
+
+// Save to search history
+const saveToHistory = (query) => {
+    let history = getSearchHistory();
+    if (!history.includes(query)) {
+        history.unshift(query);
+        if (history.length > 10) {
+            history.pop();
+        }
+        localStorage.setItem('searchHistory', JSON.stringify(history));
+    }
+};
+
+// Display search history/suggestions
+const displaySuggestions = () => {
+    const history = getSearchHistory();
+    suggestionsList.innerHTML = '';
+    
+    if (history.length === 0) {
+        searchSuggestions.classList.add('hidden');
+        return;
+    }
+
+    history.forEach(term => {
+        const tag = document.createElement('span');
+        tag.className = 'suggestion-tag';
+        tag.textContent = term;
+        tag.addEventListener('click', () => {
+            searchInput.value = term;
+            performSearch(term);
+        });
+        suggestionsList.appendChild(tag);
+    });
+
+    searchSuggestions.classList.remove('hidden');
+};
+
+// Clear search history
+const clearSearchHistory = () => {
+    localStorage.removeItem('searchHistory');
+    suggestionsList.innerHTML = '';
+    searchSuggestions.classList.add('hidden');
+    displayDefaultProducts();
+};
+
+document.getElementById('clearHistoryBtn')?.addEventListener('click', clearSearchHistory);
+
+// Display default products (8 products)
+const displayDefaultProducts = () => {
+    const defaultProductsGrid = document.getElementById('defaultProductsGrid');
+    const defaultProducts = document.getElementById('defaultProducts');
+    
+    defaultProductsGrid.innerHTML = '';
+    const productsToShow = allProducts.slice(0, 8);
+
+    productsToShow.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'search-result-card';
+        card.innerHTML = `
+            <div class="search-result-image">
+                ${product.image ? `<img src="${product.image}" alt="${product.name}">` : '<span>📸</span>'}
+            </div>
+            <div class="search-result-info">
+                <div class="search-result-name">${product.name}</div>
+                <div class="search-result-price">
+                    ${product.price}
+                    <span class="old-price">${product.oldPrice}</span>
+                </div>
+                <button class="search-result-btn" data-id="${product.id}">Add to Cart</button>
+            </div>
+        `;
+        defaultProductsGrid.appendChild(card);
+
+        // Add to cart functionality
+        card.querySelector('.search-result-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const priceValue = parseFloat(product.price.replace('$', ''));
+            const existingItem = cart.find(item => item.name === product.name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: product.name,
+                    price: priceValue,
+                    displayPrice: product.price,
+                    image: product.image || 'images/placeholder.jpg',
+                    id: product.id,
+                    quantity: 1
+                });
+            }
+            updateCart();
+            gsap.fromTo(card.querySelector('.search-result-btn'), { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
+        });
+    });
+
+    defaultProducts.classList.remove('hidden');
+};
+
+// Perform search
+const performSearch = (query) => {
+    const trimmedQuery = query.toLowerCase().trim();
+
+    if (!trimmedQuery) {
+        searchResults.classList.add('hidden');
+        noResults.classList.add('hidden');
+        document.getElementById('defaultProducts').classList.remove('hidden');
+        displaySuggestions();
+        return;
+    }
+
+    saveToHistory(trimmedQuery);
+
+    const filtered = allProducts.filter(product => 
+        product.name.toLowerCase().includes(trimmedQuery)
+    );
+
+    searchSuggestions.classList.add('hidden');
+    document.getElementById('defaultProducts').classList.add('hidden');
+
+    if (filtered.length === 0) {
+        searchResults.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+    }
+
+    resultsGrid.innerHTML = '';
+    filtered.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'search-result-card';
+        card.innerHTML = `
+            <div class="search-result-image">
+                ${product.image ? `<img src="${product.image}" alt="${product.name}">` : '<span>📸</span>'}
+            </div>
+            <div class="search-result-info">
+                <div class="search-result-name">${product.name}</div>
+                <div class="search-result-price">
+                    ${product.price}
+                    <span class="old-price">${product.oldPrice}</span>
+                </div>
+                <button class="search-result-btn" data-id="${product.id}">Add to Cart</button>
+            </div>
+        `;
+        resultsGrid.appendChild(card);
+
+        // Add to cart functionality
+        card.querySelector('.search-result-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            const priceValue = parseFloat(product.price.replace('$', ''));
+            const existingItem = cart.find(item => item.name === product.name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: product.name,
+                    price: priceValue,
+                    displayPrice: product.price,
+                    image: product.image || 'images/placeholder.jpg',
+                    id: product.id,
+                    quantity: 1
+                });
+            }
+            updateCart();
+            gsap.fromTo(card.querySelector('.search-result-btn'), { scale: 1 }, { scale: 0.9, duration: 0.1, yoyo: true, repeat: 1 });
+        });
+    });
+
+    searchResults.classList.remove('hidden');
+    noResults.classList.add('hidden');
+};
+
+// Debounced search
+const debouncedSearch = debounce(performSearch, 300);
+
+// Search input event
+searchInput.addEventListener('input', (e) => {
+    debouncedSearch(e.target.value);
+});
+
+// Open search modal
+const openSearch = () => {
+    searchModal.classList.add('active');
+    searchOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    searchInput.focus();
+    searchInput.value = '';
+    searchResults.classList.add('hidden');
+    noResults.classList.add('hidden');
+    displayDefaultProducts();
+    displaySuggestions();
+};
+
+// Close search modal
+const closeSearch = () => {
+    searchModal.classList.remove('active');
+    searchOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    searchInput.value = '';
+    searchResults.classList.add('hidden');
+    noResults.classList.add('hidden');
+};
+
+// Event listeners
+searchBtn?.addEventListener('click', openSearch);
+searchModalClose?.addEventListener('click', closeSearch);
+searchOverlay?.addEventListener('click', closeSearch);
+
+// Close on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+        closeSearch();
     }
 });
