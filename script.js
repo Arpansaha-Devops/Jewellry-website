@@ -996,7 +996,6 @@ const performSearch = (query) => {
 // Debounced search
 const debouncedSearch = debounce(performSearch, 300);
 
-// Search input event
 searchInput.addEventListener('input', (e) => {
     debouncedSearch(e.target.value);
 });

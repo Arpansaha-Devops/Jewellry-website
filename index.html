@@ -6,6 +6,7 @@
     <title>DIAMON - Premium Jewelry Collection</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styles-additional.css" />
+    <link rel="stylesheet" href="auth-styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,10 +62,49 @@
 
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">HOME</a></li>
-          <li><a href="#shops" class="nav-link">SHOPS</a></li>
-          <li><a href="#products" class="nav-link">PRODUCTS</a></li>
-          <li><a href="#blog" class="nav-link">BLOG</a></li>
-          <li><a href="#pages" class="nav-link">PAGES</a></li>
+          <li>
+            <a href="#shops" class="nav-link has-dropdown">SHOPS</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-item">Shop by Category</div>
+              <div class="nav-dropdown-item">Shop by Metal (Gold, Silver, Platinum)</div>
+              <div class="nav-dropdown-item">Shop by Price Range</div>
+              <div class="nav-dropdown-item">New Arrivals</div>
+              <div class="nav-dropdown-item">Best Sellers</div>
+            </div>
+          </li>
+          <li>
+            <a href="#products" class="nav-link has-dropdown">PRODUCTS</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-item">Rings</div>
+              <div class="nav-dropdown-item">Necklaces</div>
+              <div class="nav-dropdown-item">Bracelets</div>
+              <div class="nav-dropdown-item">Earrings</div>
+              <div class="nav-dropdown-item">Pendants</div>
+              <div class="nav-dropdown-item">Chains</div>
+              <div class="nav-dropdown-item">Wedding Collection</div>
+            </div>
+          </li>
+          <li>
+            <a href="#blog" class="nav-link has-dropdown">BLOG</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-item">Latest Posts</div>
+              <div class="nav-dropdown-item">Jewelry Care Tips</div>
+              <div class="nav-dropdown-item">Style Guides</div>
+              <div class="nav-dropdown-item">Trend Reports</div>
+              <div class="nav-dropdown-item">Behind the Scenes</div>
+            </div>
+          </li>
+          <li>
+            <a href="#pages" class="nav-link has-dropdown">PAGES</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-item">About Us</div>
+              <div class="nav-dropdown-item">Contact</div>
+              <div class="nav-dropdown-item">FAQ</div>
+              <div class="nav-dropdown-item">Shipping & Returns</div>
+              <div class="nav-dropdown-item">Size Guide</div>
+              <div class="nav-dropdown-item">Gift Cards</div>
+            </div>
+          </li>
         </ul>
 
         <div class="nav-icons">
@@ -110,6 +150,68 @@
         </div>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <div class="logo">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 17l10 5 10-5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 12l10 5 10-5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="logo-text">DIAMON</span>
+        </div>
+        <button class="mobile-menu-close" aria-label="Close Menu">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="mobile-menu-content">
+        <ul class="mobile-nav-links">
+          <li><a href="#home" class="mobile-nav-link">HOME</a></li>
+          <li><a href="#shops" class="mobile-nav-link">SHOPS</a></li>
+          <li><a href="#products" class="mobile-nav-link">PRODUCTS</a></li>
+          <li><a href="#blog" class="mobile-nav-link">BLOG</a></li>
+          <li><a href="#pages" class="mobile-nav-link">PAGES</a></li>
+        </ul>
+        
+        <div class="mobile-menu-actions">
+          <button class="mobile-login-btn" aria-label="Login">
+            <i class="fa-solid fa-user"></i>
+            <span>Login / Sign Up</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1618,10 +1720,185 @@
       </svg>
     </button>
 
+    <!-- Advertisement Modal -->
+    <div class="ad-modal-overlay">
+      <div class="ad-modal-container">
+        <button class="ad-modal-close" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="ad-image-section">
+          <img src="images/product1.png.jpeg" alt="Limited Time Offer" class="ad-product-image">
+        </div>
+        <div class="ad-content">
+          <h2 class="ad-headline">Limited Time Offer!</h2>
+          <h3 class="ad-product-name">Exclusive Diamond Collection</h3>
+          <p class="ad-description">Discover our stunning handcrafted diamond jewelry. Each piece is meticulously designed to capture timeless elegance.</p>
+          <div class="ad-price-section">
+            <span class="ad-original-price">$150.00</span>
+            <span class="ad-discount-price">$99.00</span>
+            <span class="ad-discount-badge">34% OFF</span>
+          </div>
+          <div class="ad-features">
+            <div class="ad-feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Free Shipping on Orders Over $50</span>
+            </div>
+            <div class="ad-feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>30-Day Money Back Guarantee</span>
+            </div>
+            <div class="ad-feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Lifetime Warranty Included</span>
+            </div>
+          </div>
+          <button class="ad-cta-button">SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal-overlay">
+      <div class="auth-modal">
+        <button class="auth-modal-close" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <div class="auth-header">
+          <h2>Welcome to DIAMON</h2>
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Login</button>
+            <button class="auth-tab" data-tab="signup">Sign Up</button>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" class="form-input" placeholder="Enter your email" required>
+            <span class="form-error"></span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div class="form-input-wrapper">
+              <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" required>
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="remember-me">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Remember Me</label>
+          </div>
+
+          <a href="#" class="forgot-password">Forgot Password?</a>
+
+          <button type="submit" class="auth-submit-btn">LOGIN</button>
+
+          <div class="auth-divider">or continue with</div>
+
+          <div class="social-login">
+            <button type="button" class="social-btn" aria-label="Login with Google">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button" class="social-btn" aria-label="Login with Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+
+          <div class="auth-switch">
+            Don't have an account? <a href="#" data-switch="signup">Sign Up</a>
+          </div>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form class="auth-form hidden" id="signupForm">
+          <div class="form-group">
+            <label class="form-label" for="signupName">Full Name</label>
+            <input type="text" id="signupName" class="form-input" placeholder="Enter your full name" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email" required>
+            <span class="form-error"></span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <div class="form-input-wrapper">
+              <input type="password" id="signupPassword" class="form-input" placeholder="Create a password" required>
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="password-strength">
+              <div class="password-strength-bar">
+                <div class="password-strength-fill"></div>
+              </div>
+              <span class="password-strength-text">Weak</span>
+            </div>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupConfirmPassword">Confirm Password</label>
+            <div class="form-input-wrapper">
+              <input type="password" id="signupConfirmPassword" class="form-input" placeholder="Confirm your password" required>
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="terms-checkbox">
+            <input type="checkbox" id="termsCheckbox" required>
+            <label for="termsCheckbox">
+              I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="auth-submit-btn">SIGN UP</button>
+
+          <div class="auth-divider">or continue with</div>
+
+          <div class="social-login">
+            <button type="button" class="social-btn" aria-label="Sign up with Google">
+              <i class="fab fa-google"></i>
+            </button>
+            <button type="button" class="social-btn" aria-label="Sign up with Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+          </div>
+
+          <div class="auth-switch">
+            Already have an account? <a href="#" data-switch="login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- GSAP Library -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script src="ad-modal.js"></script>
+    <script src="nav-dropdown.js"></script>
+    <script src="auth.js"></script>
+    <script src="mobile-menu.js"></script>
   </body>
 </html>

@@ -313,3 +313,281 @@
         margin-top: 3rem;
     }
 }
+
+/*  ADVERTISEMENT MODAL  */
+.ad-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.ad-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ad-modal-container {
+    position: relative;
+    max-width: 850px;
+    width: 90%;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: row;
+    min-height: 450px;
+    max-height: 85vh;
+}
+
+.ad-modal-container.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ad-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ad-modal-close:hover {
+    background: var(--primary-gold);
+    transform: rotate(90deg);
+}
+
+.ad-modal-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--dark-charcoal);
+}
+
+.ad-image-section {
+    flex: 0 0 42%;
+    position: relative;
+    overflow: hidden;
+    background: var(--light-gray);
+}
+
+.ad-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ad-content {
+    flex: 1;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    overflow-y: auto;
+}
+
+.ad-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-gold);
+    margin-bottom: 0.6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.ad-product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-charcoal);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.ad-description {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.ad-price-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ad-original-price {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    text-decoration: line-through;
+}
+
+.ad-discount-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-gold);
+}
+
+.ad-discount-badge {
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent-red));
+    color: var(--white);
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ad-features {
+    margin-bottom: 1.5rem;
+}
+
+.ad-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--dark-charcoal);
+}
+
+.ad-feature-item i {
+    color: var(--primary-gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.ad-cta-button {
+    background: linear-gradient(135deg, var(--dark-charcoal), var(--light-charcoal));
+    color: var(--white);
+    border: 2px solid var(--primary-gold);
+    padding: 0.95rem 2.2rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    align-self: flex-start;
+    margin-top: auto;
+    white-space: nowrap;
+}
+
+.ad-cta-button:hover {
+    background: linear-gradient(135deg, var(--primary-gold), var(--accent-red));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ad-modal-container {
+        flex-direction: column;
+        max-height: 90vh;
+        min-height: auto;
+        overflow-y: auto;
+    }
+
+    .ad-image-section {
+        flex: 0 0 220px;
+    }
+
+    .ad-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .ad-headline {
+        font-size: 1rem;
+    }
+
+    .ad-product-name {
+        font-size: 1.5rem;
+    }
+
+    .ad-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .ad-discount-price {
+        font-size: 1.7rem;
+    }
+
+    .ad-features {
+        margin-bottom: 1.2rem;
+    }
+
+    .ad-feature-item {
+        font-size: 0.8rem;
+    }
+
+    .ad-cta-button {
+        padding: 0.85rem 2rem;
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-modal-container {
+        width: 95%;
+    }
+
+    .ad-image-section {
+        flex: 0 0 180px;
+    }
+
+    .ad-content {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .ad-headline {
+        font-size: 0.9rem;
+    }
+
+    .ad-product-name {
+        font-size: 1.3rem;
+    }
+
+    .ad-discount-price {
+        font-size: 1.5rem;
+    }
+}
+
