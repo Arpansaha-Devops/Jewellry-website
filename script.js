@@ -27,6 +27,19 @@ const heroSlider = {
         heroSection?.addEventListener('mouseenter', () => this.pauseAutoSlide());
         heroSection?.addEventListener('mouseleave', () => this.startAutoSlide());
         this.startAutoSlide();
+        
+        // Pause slider when out of view
+        const sliderObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.startAutoSlide();
+                } else {
+                    this.pauseAutoSlide();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if (heroSection) sliderObserver.observe(heroSection);
     },
     
     showSlide(index) {
@@ -671,10 +684,12 @@ gsap.from('.hero-slide.active .hero-content', { opacity: 0, x: -50, duration: 1,
 
 // HOVER ANIMATIONS
 const addHoverAnimation = (selector, onEnter, onLeave) => {
-    document.querySelectorAll(selector).forEach(el => {
-        el.addEventListener('mouseenter', () => onEnter(el));
-        el.addEventListener('mouseleave', () => onLeave(el));
-    });
+    if (window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll(selector).forEach(el => {
+            el.addEventListener('mouseenter', () => onEnter(el));
+            el.addEventListener('mouseleave', () => onLeave(el));
+        });
+    }
 };
 
 addHoverAnimation('.category-card', (card) => {
@@ -697,7 +712,7 @@ addHoverAnimation('.instagram-item', (item) => {
     gsap.to(item.querySelector('img'), { duration: 0.35, ease: 'power3.out', filter: 'brightness(1) blur(0px)' });
 });
 
-// SCROLL TRIGGER ANIMATIONS
+
 const scrollAnimate = (selector, config = {}) => {
     gsap.from(selector, {
         scrollTrigger: { trigger: selector, start: 'top 80%', ...config.scrollTrigger },
@@ -745,10 +760,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // SCROLL TO TOP
+// Debounce function
+const debounceUtility = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
 const scrollTopBtn = document.querySelector('.scroll-top-btn');
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', debounceUtility(() => {
     scrollTopBtn?.classList.toggle('visible', window.pageYOffset > 300);
-});
+}, 100));
 scrollTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // HERO CTA
@@ -777,7 +805,8 @@ document.addEventListener('click', (e) => {
         toggleMenu(false);
     }
 });
-// ==================== SEARCH FUNCTIONALITY ====================
+
+
 // All products data
 const allProducts = [
     { id: 1, name: 'Sterling Silver', price: '$69.00', oldPrice: '$80.00', image: 'images/product1.png.jpeg' },

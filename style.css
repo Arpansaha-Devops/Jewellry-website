@@ -17,6 +17,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
 body {
     font-family: 'Jost', sans-serif;
     background-color: var(--white);
@@ -2657,7 +2666,7 @@ body {
     display: none;
 }
 
-/* ==================== ENHANCED RESPONSIVE DESIGN ==================== */
+/*  RESPONSIVE DESIGN  */
 
 /* Tablet and below */
 @media (max-width: 1024px) {

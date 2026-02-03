@@ -3,12 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DIAMON - Premium Jewelry Collection</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>DIAMON - Luxury Diamond & Gold Jewelry | Premium Collection</title>
+    <meta name="description" content="Discover DIAMON's exquisite collection of luxury diamond and gold jewelry. Shop premium rings, necklaces, bracelets, and earrings. Handcrafted perfection with timeless elegance." />
+    <meta name="keywords" content="luxury jewelry, diamond jewelry, gold jewelry, premium rings, diamond necklaces, designer jewelry, DIAMON, wedding jewelry, engagement rings" />
+    <meta name="author" content="DIAMON Jewelry" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.diamon-jewelry.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.diamon-jewelry.com/" />
+    <meta property="og:title" content="DIAMON - Luxury Diamond & Gold Jewelry | Premium Collection" />
+    <meta property="og:description" content="Discover DIAMON's exquisite collection of luxury diamond and gold jewelry. Handcrafted perfection with timeless elegance." />
+    <meta property="og:image" content="https://www.diamon-jewelry.com/images/heroimage4.png.png" />
+    <meta property="og:site_name" content="DIAMON Jewelry" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.diamon-jewelry.com/" />
+    <meta name="twitter:title" content="DIAMON - Luxury Diamond & Gold Jewelry" />
+    <meta name="twitter:description" content="Discover DIAMON's exquisite collection of luxury diamond and gold jewelry." />
+    <meta name="twitter:image" content="https://www.diamon-jewelry.com/images/heroimage4.png.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
+    <link rel="shortcut icon" href="favicon.png" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    
+    <link rel="preload" href="images/heroimage4.png.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="style.css" as="style" />
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styles-additional.css" />
     <link rel="stylesheet" href="auth-styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -21,6 +61,29 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JewelryStore",
+      "name": "DIAMON",
+      "description": "Luxury diamond and gold jewelry store offering premium rings, necklaces, bracelets, and earrings",
+      "url": "https://www.diamon-jewelry.com",
+      "logo": "https://www.diamon-jewelry.com/favicon.png",
+      "image": "https://www.diamon-jewelry.com/images/heroimage4.png.png",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/diamon",
+        "https://www.instagram.com/diamon",
+        "https://www.twitter.com/diamon"
+      ]
+    }
+    </script>
   </head>
 
   <body>
@@ -221,6 +284,9 @@
             src="images/heroimage4.png.png"
             alt="Luxury Jewelry Collection"
             class="hero-image"
+            width="1920"
+            height="1080"
+            fetchpriority="high"
           />
           <div class="hero-content">
             <h1 class="hero-title">Timeless Elegance</h1>
@@ -233,22 +299,28 @@
             src="images/heroimage3.png.png"
             alt="Premium Diamond Jewelry"
             class="hero-image"
+            width="1920"
+            height="1080"
+            loading="lazy"
           />
           <div class="hero-content">
-            <h1 class="hero-title">Luxury Redefined</h1>
-            <p class="hero-subtitle">Handcrafted Perfection</p>
-            <button class="hero-cta">Explore</button>
+            <h2 class="hero-title">Dazzling Sparkle</h2>
+            <p class="hero-subtitle">Rare Diamonds for Rare Moments</p>
+            <button class="hero-cta">Explore Now</button>
           </div>
         </div>
         <div class="hero-slide">
           <img
             src="images/hero5.png.png"
-            alt="Designer Jewelry"
+            alt="Elegant Gold Collection"
             class="hero-image"
+            width="1920"
+            height="1080"
+            loading="lazy"
           />
           <div class="hero-content">
-            <h1 class="hero-title">Shine Bright</h1>
-            <p class="hero-subtitle">Exclusive Designer Pieces</p>
+            <h2 class="hero-title">Golden Heritage</h2>
+            <p class="hero-subtitle">Crafted with Passion and Precision</p>
             <button class="hero-cta">View Collection</button>
           </div>
         </div>
@@ -256,14 +328,18 @@
           <video
             src="video1.mp4"
             class="hero-video"
-            loop
+            autoplay
             muted
+            loop
             playsinline
+            width="1920"
+            height="1080"
+            preload="metadata"
           ></video>
           <div class="hero-content">
-            <h1 class="hero-title">Precious Moments</h1>
-            <p class="hero-subtitle">Celebrate Life's Special Occasions</p>
-            <button class="hero-cta">Discover More</button>
+            <h2 class="hero-title">Modern Luxury</h2>
+            <p class="hero-subtitle">Defining the Future of Jewelry</p>
+            <button class="hero-cta">Shop Latest</button>
           </div>
         </div>
       </div>
@@ -311,6 +387,9 @@
                 src="images/bracelet.png"
                 alt="Bracelet Collection"
                 class="category-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
             </div>
             <h3 class="category-title">Bracelet</h3>
@@ -323,6 +402,9 @@
                 src="images/collection.png"
                 alt="Jewelry Collection"
                 class="category-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
             </div>
             <h3 class="category-title">Collection</h3>
@@ -335,6 +417,9 @@
                 src="images/rings.png"
                 alt="Rings Collection"
                 class="category-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
             </div>
             <h3 class="category-title">Rings</h3>
@@ -347,6 +432,9 @@
                 src="images/accessories.png"
                 alt="Accessories Collection"
                 class="category-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
             </div>
             <h3 class="category-title">Accessories</h3>
@@ -384,6 +472,9 @@
                 src="images/product1.png.jpeg"
                 alt="Sterling Silver"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -448,6 +539,9 @@
                 src="images/product2.png.jpeg"
                 alt="Ruby Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -512,6 +606,9 @@
                 src="images/product3.png.jpeg"
                 alt="Rose Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -576,6 +673,9 @@
                 src="images/product4.png.jpeg"
                 alt="Necklace Diamond"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -627,7 +727,7 @@
               </svg>
             </button>
             <div class="product-image-wrapper">
-              <img src="images/ring3.png.png" alt="Emerald Bracelet" class="product-image">
+              <img src="images/ring3.png.png" alt="Emerald Bracelet" class="product-image" width="300" height="300" loading="lazy">
               <div class="product-actions">
                 <button class="product-action-btn eye-btn" aria-label="Quick View">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -656,7 +756,7 @@
               </svg>
             </button>
             <div class="product-image-wrapper">
-              <img src="images/necless.png.png" alt="Sapphire Ring" class="product-image">
+              <img src="images/necless.png.png" alt="Sapphire Ring" class="product-image" width="300" height="300" loading="lazy">
               <div class="product-actions">
                 <button class="product-action-btn eye-btn" aria-label="Quick View">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -685,7 +785,7 @@
               </svg>
             </button>
             <div class="product-image-wrapper">
-              <img src="images/ring.png.png" alt="Pearl Earrings" class="product-image">
+              <img src="images/ring.png.png" alt="Pearl Earrings" class="product-image" width="300" height="300" loading="lazy">
               <div class="product-actions">
                 <button class="product-action-btn eye-btn" aria-label="Quick View">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -714,7 +814,7 @@
               </svg>
             </button>
             <div class="product-image-wrapper">
-              <img src="images/green necless.png.png" alt="Gold Pendant" class="product-image">
+              <img src="images/green necless.png.png" alt="Gold Pendant" class="product-image" width="300" height="300" loading="lazy">
               <div class="product-actions">
                 <button class="product-action-btn eye-btn" aria-label="Quick View">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -793,6 +893,9 @@
                 src="images/product7.png.jpeg"
                 alt="Sterling Silver"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -857,6 +960,9 @@
                 src="images/product11.png.jpeg"
                 alt="Ruby Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -921,6 +1027,9 @@
                 src="images/product9.png.jpeg"
                 alt="Rose Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -985,6 +1094,9 @@
                 src="images/product10.png.jpeg"
                 alt="Necklace Diamond"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -1058,6 +1170,9 @@
                 src="images/product11.png.jpeg"
                 alt="Rose Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -1125,6 +1240,9 @@
                 src="images/prodyct12.png.jpeg"
                 alt="Ruby Necklace"
                 class="product-image"
+                width="300"
+                height="300"
+                loading="lazy"
               />
               <div class="product-actions">
                 <button
@@ -1178,49 +1296,28 @@
         <h2 class="section-title">SHOP IN INSTAGRAM</h2>
         <div class="instagram-grid">
           <div class="instagram-item lazy-element">
-            <img src="images/product13.png.jpeg" alt="Instagram jewelry 1" />
+            <img src="images/product13.png.jpeg" alt="Instagram jewelry 1" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product14.png.jpeg" alt="Instagram jewelry 2" />
+            <img src="images/product14.png.jpeg" alt="Instagram jewelry 2" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product5.png.jpeg" alt="Instagram jewelry 3" />
+            <img src="images/product5.png.jpeg" alt="Instagram jewelry 3" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <svg viewBox="0 0 24 24" fill="none">
                 <defs>
-                  <linearGradient
-                    id="insta-grad"
-                    x1="0%"
-                    y1="100%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #f09433; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="25%"
-                      style="stop-color: #e6683c; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="50%"
-                      style="stop-color: #dc2743; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="75%"
-                      style="stop-color: #cc2366; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #bc1888; stop-opacity: 1"
-                    />
+                  <linearGradient id="insta-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#405DE6" />
+                    <stop offset="25%" style="stop-color:#5851DB" />
+                    <stop offset="50%" style="stop-color:#833AB4" />
+                    <stop offset="75%" style="stop-color:#C13584" />
+                    <stop offset="100%" style="stop-color:#F56040" />
                   </linearGradient>
                 </defs>
                 <rect
@@ -1245,43 +1342,43 @@
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product6.png.jpeg" alt="Instagram jewelry 4" />
+            <img src="images/product6.png.jpeg" alt="Instagram jewelry 4" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product7.png.jpeg" alt="Instagram jewelry 5" />
+            <img src="images/product7.png.jpeg" alt="Instagram jewelry 5" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product8.png.jpeg" alt="Instagram jewelry 6" />
+            <img src="images/product8.png.jpeg" alt="Instagram jewelry 6" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product9.png.jpeg" alt="Instagram jewelry 7" />
+            <img src="images/product9.png.jpeg" alt="Instagram jewelry 7" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product10.png.jpeg" alt="Instagram jewelry 8" />
+            <img src="images/product10.png.jpeg" alt="Instagram jewelry 8" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/product11.png.jpeg" alt="Instagram jewelry 9" />
+            <img src="images/product11.png.jpeg" alt="Instagram jewelry 9" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
           </div>
           <div class="instagram-item lazy-element">
-            <img src="images/prodyct12.png.jpeg" alt="Instagram jewelry 10" />
+            <img src="images/prodyct12.png.jpeg" alt="Instagram jewelry 10" width="200" height="200" loading="lazy" />
             <div class="instagram-overlay">
               <i class="fa-brands fa-instagram"></i>
             </div>
@@ -1893,12 +1990,12 @@
 
     <!-- GSAP Library -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
-    <script src="ad-modal.js"></script>
-    <script src="nav-dropdown.js"></script>
-    <script src="auth.js"></script>
-    <script src="mobile-menu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="ad-modal.js" defer></script>
+    <script src="nav-dropdown.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="mobile-menu.js" defer></script>
   </body>
 </html>
